@@ -11,7 +11,8 @@ from PIL import Image
 # -----------------------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("naira_fake_vs_genuine_model.h5")
+    model_path = Path(__file__).parent.parent / "models" / "naira_fake_vs_genuine_model.h5"
+    return tf.keras.models.load_model(model_path)
 
 model = load_model()
 
